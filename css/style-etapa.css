@@ -1,0 +1,172 @@
+/*HEADER*/
+.portada{
+	background-image: url('../images/header_etapa.jpg');
+	background-size: cover;
+	height: 500px;
+	font-family: 'Fira Sans', sans-serif;
+}
+.title{
+	padding-top: 300px;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 100px;
+    color: white;
+}
+.header{
+	margin: 0;
+}
+.header figure{
+	margin: 0;
+}
+.logo{
+	height: 40px;
+}
+.subtitle{
+	font-size: 30px;
+	font-family: 'Oswald', sans-serif;
+	margin: 0 auto;
+	text-align: right;
+	color: white;
+}
+/*CONTENT*/
+.description{
+	margin: 50px auto;
+    text-align: justify;
+    color: rgb(40,65,16);
+    font-size: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.title_etapa_seleccion{
+	font-family: 'Open Sans Condensed', sans-serif;
+    color: rgb(130,41,37);
+    font-size: 40px;
+    text-align: center;
+}
+.antes_button{
+	background: rgb(117,84,65);
+}
+.durante_button{
+	background: rgb(103,113,49);
+}
+.despues_button{
+	background: rgb(178,204,69);
+}
+.etapa article{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.etapa article h3{
+	color: white;
+    width: 140px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 60px;
+    padding: 10px;
+}
+.etapa article a{
+	text-decoration: none;
+}
+.barra_horizontal{
+	height: 10px;
+    position: absolute;
+    width: 80%;
+    background: rgb(84,107,33);
+    z-index: -1;
+}
+/*ANTES*/
+.antes_background{
+	background-image: url(../images/antes.jpg);
+	background-size: cover; 
+}
+.antes_background h1{
+	padding-top: 150px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 50px;
+    color: white;    
+	font-family: 'Fira Sans', sans-serif;
+}
+.antes_background h3{
+	font-size: 30px;
+	font-family: 'Oswald', sans-serif;
+	margin: 0 auto;
+	text-align: left;
+	color: white;
+	padding-bottom: 50px;
+}
+.antes_text article h3:first-child{
+	    font-family: 'Source Serif Pro', serif;
+    font-weight: normal;
+    margin: 50px;
+    font-size: 15px;
+    text-align: justify;
+}
+.antes_text div:first-child{
+	display: flex;
+    align-items: center;
+    justify-content:center;
+    margin: 80px;
+}
+.antes_text div img{
+	width: 200px;
+    margin-left: 70px;
+}
+.list_text ul{
+	list-style: none;
+}
+.list_text ul li:before{
+	content: '-';
+}
+.list_text ul li{
+	font-family: 'Source Serif Pro', serif;
+	margin: 20px 0; 
+	cursor: pointer;
+	text-decoration: underline;
+}
+.list_text a{
+	text-decoration: none;
+}
+/*DURANTE*/
+.durante_background{
+	background-image: url(../images/durante.jpg);
+	background-size: cover; 
+}
+.durante_background h1{
+	padding-top: 150px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 50px;
+    color: white;    
+	font-family: 'Fira Sans', sans-serif;
+}
+.durante_background h3{
+	font-size: 30px;
+	font-family: 'Oswald', sans-serif;
+	margin: 0 auto;
+	text-align: left;
+	color: white;
+	padding-bottom: 50px;
+}
+/*DESPUES*/
+.despues_background{
+	background-image: url(../images/despues.jpg);
+	background-size: cover; 
+}
+.despues_background h1{
+	padding-top: 150px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 50px;
+    color: white;    
+	font-family: 'Fira Sans', sans-serif;
+}
+.despues_background h3{
+	font-size: 30px;
+	font-family: 'Oswald', sans-serif;
+	margin: 0 auto;
+	text-align: left;
+	color: white;
+	padding-bottom: 50px;
+}
