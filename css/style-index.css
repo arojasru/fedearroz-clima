@@ -1,0 +1,71 @@
+/*HEADER*/
+.portada{
+	background-image: url('../images/header_index.jpg');
+	background-size: cover;
+	height: 500px;
+	font-family: 'Fira Sans', sans-serif;
+}
+.title{
+	padding-top: 200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+}
+.header{
+	margin: 0;
+}
+.header figure{
+	margin: 0;
+}
+.logo{
+	height: 40px;
+}
+.subtitle{
+	font-size: 30px;
+	font-family: 'Oswald', sans-serif;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+/*MAPA*/
+.description{
+	margin: 50px auto;
+    text-align: center;
+    color: rgb(40,65,16);
+    font-size: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.mapa{
+	    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+}
+.text_frame{
+	margin-left: 20px;
+}
+.text_frame h1{
+	font-family: 'Open Sans Condensed', sans-serif;
+    color: rgb(130,41,37);
+    font-size: 45px;
+}
+.text_frame h3{
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: rgb(44,69,21);
+}
+.text_frame input[type="button"]{
+	display: block;
+	font-size: 18px;
+	color: white;
+	background: rgb(123,98,36);
+	margin: 20px 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.text_frame input[type="text"]{
+	font-family: 'Source Serif Pro', serif;
+    font-size: 15px;
+}
+.map_frame{
+
+}
