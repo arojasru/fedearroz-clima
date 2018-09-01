@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style-historico-antes.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:600|Open+Sans+Condensed:700|Oswald:500|Source+Serif+Pro" rel="stylesheet">
+	<title>Histórico del clima</title>
+</head>
+<body>
+	<section class="logo">
+		<header class="contenedor header">
+			<figure>
+				<a href="./index.html"><img src="./images/logo.jpg"></a>
+			</figure>
+		</header>
+	</section>
+	<section class="portada">
+		<div class="contenedor"></div>		
+	</section>
+	<section class="contenedor section1">
+		<article class="section1_article1">
+			<img class="img_title" src="./images/icon_antes.png">
+			<h1>CONOZCA EL CLIMA HISTÓRICO DE SU REGIÓN</h1>	
+		</article>
+		<article class="section1_article2">
+			<h3>La información histórica es de gran utilidad, permite conocer el comportamiento normal de las diferentes variables climáticas de la zona, identificando las condiciones climáticas de cada mes, y con esta información se puede determinar cual o cuales son los meses que históricamente han brindado las mejores condiciones para el adecuado desarrollo del cultivo</h3>
+		</article>
+	</section>
+	<section class="contenedor section2">
+		<article class="section2_article1">
+			<div class="brown_bar"></div>
+			<div>
+				<h1>PARA TENER EN CUENTA</h1>
+				<img src="./images/admiration_icon.png">
+			</div>
+		</article>
+		<article class="section2_article2">
+			<div>
+				<h1><img src="./images/precip.png">Precipitación</h1>
+				<h3><p></p>La precipitación acumulada anual es xxxxx</h3>	
+				<h3><p></p>Los meses mas lluviosos son xxxx y xxxx</h3>	
+				<h3><p></p>Los meses mas secos son xxxx y xxxx</h3>	
+				<h3><p></p>La temporada lluviosa inicia en xxx y finaliza en xxx</h3>	
+			</div>
+			<div>
+				<h1><img src="./images/temp_max.png">Temperatura. Máx.</h1>
+				<h3><p></p>La precipitación acumulada anual es xxxxx</h3>	
+				<h3><p></p>Los meses mas lluviosos son xxxx y xxxx</h3>	
+			</div>
+			<div>
+				<h1><img src="./images/temp_min.png">Temperatura. Mín.</h1>
+				<h3><p></p>La precipitación acumulada anual es xxxxx</h3>	
+				<h3><p></p>Los meses mas lluviosos son xxxx y xxxx</h3>	
+			</div>
+		</article>
+		<article class="section2_article3">
+			<div>
+				<h1><img src="./images/luz.png">Brillo Solar</h1>
+				<h3><p></p>La precipitación acumulada anual es xxxxx</h3>	
+				<h3><p></p>Los meses mas lluviosos son xxxx y xxxx</h3>	
+				<h3><p></p>Los meses mas secos son xxxx y xxxx</h3>	
+				<h3><p></p>La temporada lluviosa inicia en xxx y finaliza en xxx</h3>	
+			</div>
+			<div>
+				<h1><img src="./images/lluvia.png">N. días de lluvia</h1>
+				<h3><p></p>La precipitación acumulada anual es xxxxx</h3>	
+				<h3><p></p>Los meses mas lluviosos son xxxx y xxxx</h3>	
+			</div>
+			<div>
+				<h1><img src="./images/humedad.png">Humedad Relativa</h1>
+				<h3><p></p>La precipitación acumulada anual es xxxxx</h3>	
+				<h3><p></p>Los meses mas lluviosos son xxxx y xxxx</h3>	
+			</div>
+		</article>
+	</section>
+	<section class="contenedor section3">
+		<article class="">
+			<div class="icons">
+						<div class="icon1" onmouseenter="show('precip')" onmouseleave="hide('precip')">
+							<div>
+								<h6 class="precip" id="precip">Precipitaciones</h6>
+								<div class="border_left"></div>
+							</div>
+							<img src="./images/precip.png">
+						</div>
+						<div class="icon2" onmouseenter="show('temp_min')" onmouseleave="hide('temp_min')">
+							<div>
+								<h6 class="temp_min"  id="temp_min">Temp. Mín.</h6>
+								<div class="border_left border2"></div>
+							</div>
+							<img src="./images/temp_min.png">
+						</div>
+						<div class="icon3" onmouseenter="show('temp_max')" onmouseleave="hide('temp_max')">
+							<div>
+								<h6  class="temp_max" id="temp_max">Temp. Máx.</h6>
+								<div class="border_left border3"></div>
+							</div>
+							<img src="./images/temp_max.png">
+						</div>
+						<div class="icon4" onmouseenter="show('luz')" onmouseleave="hide('luz')">
+							<div>
+								<h6 id="luz" class="luz">Brillo solar</h6>
+								<div class="border_rigth border4"></div>
+							</div>
+							<img src="./images/luz.png">
+						</div>
+						<div class="icon5" onmouseenter="show('lluvia')" onmouseleave="hide('lluvia')">
+							<div>
+								<h6 id="lluvia" class="lluvia">Días de lluvia</h6>
+								<div class="border_rigth border5"></div>
+							</div>
+							<img src="./images/lluvia.png">
+						</div>
+						<div class="icon6" onmouseenter="show('humedad')" onmouseleave="hide('humedad')">
+							<div>
+								<h6 id="humedad" class="humedad">Humedad Rel.</h6>
+								<div class="border_rigth border6"></div>
+							</div>
+							<img src="./images/humedad.png">
+						</div>
+					</div>
+			<div class="variable_graph"></div>
+		</article>
+	</section>
+	<section class="section4 contenedor">
+		<article class="section2_article1">
+			<div class="brown_bar"></div>
+			<div>
+				<h1>ESTAS SON LAS ESTACIONES CLIMÁTICAS DE LA REGIÓN</h1>
+			</div>
+		</article>
+		<article>
+			<div id="map"></div>
+			<div>
+				
+			</div>
+		</article>
+	</section>
+		<footer class="footer">
+        <div class="menu_footer contenedor">
+            <ul>
+                <li>
+                    <a href="./index.html"><img src="./images/logo.jpg"></a>
+                </li>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfw0NyjZuWvtsKxgWdJwrdmVfyXWUe8_pkFYRzXR4qwjCgMfg/viewform">
+                    <li>Habla con nosotros</li>
+                </a>
+                <a href="http://190.60.252.91:2911/loginUsers">
+                    <li>Sección usuarios</li>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1WmuWTXdO1SPUZ8P8n_t7S9aJ4tn21yZE">
+                    <li>Documentos</li>
+                </a>
+            </ul>
+        </div>
+        <div class="info_footer contenedor">
+            <h5>
+FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
+            <h5>Correo Electrónico: comunica@fedearroz.com.co</h5>
+        </div>
+        <div class="logos">
+          <div class="contenedor">
+            <h3>CON EL APOYO DE:</h3>
+            <div class="fmi"></div>
+          </div>
+        </div>
+    </footer>
+	<script type="text/javascript">
+		function show(elemento){
+      	console.log(elemento);
+      	var elem = document.getElementById(elemento);
+      	console.log(elem);
+      	elem.style.fontSize = '30px';
+      	elem.style.top = '12%';
+      }
+      function hide(elemento){
+      	var elem = document.getElementById(elemento);
+      	elem.style.fontSize = '22px';
+      	elem.style.top = '40%';
+      }
+	</script>
+</body>
+</html>

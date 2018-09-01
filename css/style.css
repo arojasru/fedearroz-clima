@@ -58,6 +58,82 @@ body{
 	text-align: center;
 	margin: 10px 0 0 0;
 	color: white;
+	margin-bottom: 15px;
+}
+.logos{
+	background:white;
+}
+.logos div{
+	display: flex;
+	justify-content: center;
+}
+.logos div h3{
+	font-family: 'Oswald';
+    color: rgb(123,98,36);
+    font-size: 15px;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: 25px;
+    border-bottom: 5px solid rgb(123,98,36);
+    background: white;
+    margin-bottom: 0;
+    height: 27px;
+}
+.fmi{
+	background-image: url(../images/logo_fmi.png);
+}
+.logos div div{
+	margin-top: 13px;
+    width: 465px;
+    height: 55px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.info_footer{
+	width: 60%;
+    margin-right: 0;
+}
+@media screen and (max-width: 500px){
+	.header figure a img{
+		width: 190px;
+	}
+	.portada{
+		height: 200px;
+	}
+	.portada div h1{
+		font-size: 40px;
+    	padding-top: 76px;
+	}
+	.portada div h3{
+		font-size: 18px;
+	}
+	section nav{
+		position: absolute;
+    	left: -150%;
+	}
+	footer{
+		margin: 10px 0 10px 0 !important;
+	}
+	footer .menu_footer ul a{
+		    width: 400px;
+    text-align: center;
+    margin: 10px 0;
+	}
+	.menu_footer ul{
+		flex-wrap: wrap;
+	}
+	.info_footer, .menu_footer ul li a img{
+		visibility: hidden;
+    	height: 0;
+	}
+	.logos div h3{
+		margin: 10px 0;
+    	font-size: 14px;
+    	line-height: 2;
+	}
+	.logos div{
+		flex-wrap: wrap;
+	}
 }
 /*
 font-family: 'Fira Sans', sans-serif;

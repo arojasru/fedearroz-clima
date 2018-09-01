@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style-etapa.css">
@@ -8,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:600|Open+Sans+Condensed:700|Oswald:500|Source+Serif+Pro" rel="stylesheet">
     <title>Escoja su etapa</title>
 </head>
-
 <body>
     <section class="logo">
         <header class="contenedor header">
@@ -20,7 +18,7 @@
     <section class="portada">
         <div class="contenedor">
             <h1 class="title">¡Bienvenido!</h1>
-            <h3 class="subtitle">Espinal, Tolima</h3>
+            <h3 class="subtitle" id="subtitle">Espinal, Tolima</h3>
         </div>
     </section>
     <section>
@@ -43,6 +41,7 @@
     <section class="contenedor">
         <h2 class="description">Tenga en cuenta que las condiciones meteorológicas ejercen una influencia, ya sea positiva o negativa, en cada una de las labores agronómicas del cultivo, y esto se refleja en la productividad, por esto es importante conocer la etapa de desarrollo del cultivo y la labor agronómica que se esta planeando para revisar la información climática y/o meteorológica que favorezca tomar una decisión.
 		</h2>
+        <img src="./images/ciclo_del_arroz_fases.jpg" class="ciclo">
     </section>
     <section class="etapa contenedor">
         <h3 class="title_etapa_seleccion">¿En que etapa de desarrollo del cultivo se encuentra?</h3>
@@ -65,14 +64,12 @@
         </article>
         <article class="list_text">
             <div>
-                <img src="./images/icon_antes.jpg">
+                <img src="./images/icon_antes.png">
                 <div>
-                    <ul>
-                        <li>Conozca el clima histórico de la región.</li>
-                        <li>Pronostico climático a 6 meses.</li>
-                        <li>Selección de variedad y época de siembra</li>
-                        <li>Conozca el pronostico del tiempo para esta semana.</li>
-                    </ul>
+                    <a href="historico_antes.html">Conozca el clima histórico de la región</a>
+                    <a href="variedad_antes.html">Selección de variedad y época de siembra</a>
+                    <a href="pronostico_antes.html">Pronostico climático a 6 meses</a>
+                    <a href="semana_antes.html">Conozca el pronóstico del tiempo para esta semana</a>
                 </div>
             </div>
         </article>
@@ -87,16 +84,14 @@
         <article>
             <h3>La preparación del suelo, planificación de siembra y la siembra, son labores agronómicas muy importantes, de estas decisiones radica el éxito de la campaña. Una buena preparación de suelo le brinda al cultivo las mejores condiciones para que este se pueda desarrollar adecuadamente, planificar adecuadamente la siembra permite seleccionar las mejores condiciones climáticas para la variedad que vamos a sembrar y por ultimo realizar la siembra bajo las mejores condiciones de clima permite garantizar el establecimiento de nuestro cultivo</h3>
         </article>
-        <article class="list_text">
+        <article class="list_text durante">
             <div>
-                <img src="./images/icon_durante.jpg">
+                <img src="./images/icon_durante.png">
                 <div>
-                    <ul>
-                        <li>Conozca el clima histórico de la región.</li>
-                        <li>Pronostico climático a 6 meses.</li>
-                        <li>Selección de variedad y época de siembra</li>
-                        <li>Conozca el pronostico del tiempo para esta semana.</li>
-                    </ul>
+                    <a href="evaluacion_vegetativa.html" style="font-size: 15px;">Evaluación de las condiciones climáticas actuales, monitoreo de labores y desarrollo del cultivo</a>
+                    <a href="tiempo_atmosferico.html">Tiempo Atmosférico Actual</a>
+                    <a href="semana_durante.html">Conozca el pronostico del tiempo para esta semana</a>
+                    <a href="pronostico_durante.html">Pronostico climático a 6 meses</a>
                 </div>
             </div>
         </article>
@@ -111,21 +106,19 @@
         <article>
             <h3>La preparación del suelo, planificación de siembra y la siembra, son labores agronómicas muy importantes, de estas decisiones radica el éxito de la campaña. Una buena preparación de suelo le brinda al cultivo las mejores condiciones para que este se pueda desarrollar adecuadamente, planificar adecuadamente la siembra permite seleccionar las mejores condiciones climáticas para la variedad que vamos a sembrar y por ultimo realizar la siembra bajo las mejores condiciones de clima permite garantizar el establecimiento de nuestro cultivo</h3>
         </article>
-        <article class="list_text">
+        <article class="list_text despues">
             <div>
-                <img src="./images/icon_despues.jpg">
+                <img src="./images/icon_despues.png">
                 <div>
-                    <ul>
-                        <li>Conozca el clima histórico de la región.</li>
-                        <li>Pronostico climático a 6 meses.</li>
-                        <li>Selección de variedad y época de siembra</li>
-                        <li>Conozca el pronostico del tiempo para esta semana.</li>
-                    </ul>
+                    <a href="evaluacion_reproductiva.html" style="font-size: 15px;">Evaluación de las condiciones climáticas actuales, monitoreo de labores y desarrollo del cultivo</a>
+                    <a href="tiempo_atmosferico.html">Tiempo Atmosférico Actual</a>
+                    <a href="semana_reproductiva.html">Conozca el pronostico del tiempo para esta semana</a>
+                    <a href="pronostico_reproductiva.html">Pronostico climático a 6 meses</a>
                 </div>
             </div>
         </article>
     </section>
-    <footer class="footer">
+        <footer class="footer">
         <div class="menu_footer contenedor">
             <ul>
                 <li>
@@ -147,7 +140,27 @@
 FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
             <h5>Correo Electrónico: comunica@fedearroz.com.co</h5>
         </div>
+        <div class="logos">
+          <div class="contenedor">
+            <h3>CON EL APOYO DE:</h3>
+            <div class="fmi"></div>
+          </div>
+        </div>
     </footer>
+    <script type="text/javascript">
+        var paramstr = window.location.search.substr(1);
+        console.log(paramstr);
+        var paramarr = paramstr.split ("&");
+        var params = {};
+
+        for ( var i = 0; i < paramarr.length; i++) {
+            var tmparr = paramarr[i].split("=");
+            params[i] = tmparr[1].replace("%20", " ");
+        }
+        var sub = document.getElementById('subtitle');
+        console.log(sub.value);
+        sub.innerHTML = params[0]+" , "+params[1];
+    </script>
 </body>
 
 </html>

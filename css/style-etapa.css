@@ -75,6 +75,9 @@
     background: rgb(84,107,33);
     z-index: -1;
 }
+.ciclo{
+    width: 100%;
+}
 /*ANTES*/
 .antes_background{
 	background-image: url(../images/antes.jpg);
@@ -108,22 +111,54 @@
     align-items: center;
     justify-content:center;
     margin: 80px;
+    flex-wrap: nowrap;
 }
 .antes_text div img{
 	width: 200px;
     margin-left: 70px;
 }
-.list_text ul{
+.list_text div{
 	list-style: none;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+        margin-left: 30px;
 }
-.list_text ul li:before{
-	content: '-';
+.antes_text .list_text div a{
+    border: 2px solid rgb(172, 206, 24);
+    color: rgb(172, 206, 24);
 }
-.list_text ul li{
-	font-family: 'Source Serif Pro', serif;
-	margin: 20px 0; 
-	cursor: pointer;
-	text-decoration: underline;
+.antes_text .list_text div a:hover{
+	background: rgb(172, 206, 24);
+    color: white;
+}
+.durante.list_text div a{
+    border: 2px solid rgb(123, 82, 62);
+    color: rgb(123, 82, 62);
+}
+.durante.list_text div a:hover{
+	background: rgb(123, 82, 62);
+    color: white;
+}
+.despues.list_text div a{
+    border: 2px solid rgb(101,114,36);
+    color: rgb(101,114,36);
+}
+.despues.list_text div a:hover{
+	background: rgb(101,114,36);
+    color: white;
+}
+.list_text div a{
+	font-family: Oswald;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 40%;
+    border-radius: 10px;    
+    padding: 15px 5px;
+    font-size: 20px;
+    transition: 0.5s;
+    line-height: 1.2;
+    margin: 10px auto;
 }
 .list_text a{
 	text-decoration: none;

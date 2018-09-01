@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width ,initial-scale=1, user-scalable=no"/>
 	<link rel="stylesheet" type="text/css" href="./css/style-index.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:600|Open+Sans+Condensed:700|Oswald:500|Source+Serif+Pro" rel="stylesheet">
@@ -39,17 +40,75 @@
             </ul>
         </nav>
 	</section>
-	<section class="contenedor">
+	<section class="contenedor section4">
 		<h2 class="description">Esta plataforma le brindara apoyo en la toma de decisiones, para las diferentes etapas del cultivo y las labores que se llevan a cabo en cada una de estas, orientandolo sobre las condiciones climáticas y/o meteorológicas que predominara</h2>
 		<article class="mapa">
 			<div class="map_frame">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1017038.6673830996!2d-72.01592968746522!3d5.292742296167798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6b0c344eb87e33%3A0x28f41949c946a900!2sTolima!5e0!3m2!1ses-419!2sco!4v1533678524012" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<div id="map"></div>
 			</div>
 			<div class="text_frame">
 				<h1>¡COMIENZA!</h1>
 				<h3>Danos tu ubicación para darte un mejor consejo</h3>
-				<input type="text" name="place" placeholder="Ejemplo: Espinal, Tolima">
-				<a href="./etapa.html"><input type="button" name="siguiente" value="siguiente ▸"/></a>
+        <div class="inputs">
+          <input id="municipio" type="text" placeholder="Ejemplo: Espinal">
+          <input id="departamento" type="text" placeholder="Ejemplo: Tolima">
+        </div>
+        <div class="texts">
+          <h3>MUNICIPIO</h3>
+          <h3>DEPARTAMENTO</h3>
+        </div>
+        <input id="submit" type="button" class="search_icon" value="Buscar">
+        <div class="error">
+          <h3 id="error">*Municipio y Departamento son campos necesarios para continuar la búsqueda*</h3>
+        </div>
+				<div class="icons" id="icons">
+					<div class="icon1" onmouseenter="show('precip')" onmouseleave="hide('precip')">
+						<div id="precip">
+							<h6 class="precip">Precipitaciones</h6>
+							<div class="border_left border1"></div>
+						</div>
+						<img src="./images/precip.png">
+					</div>
+					<div class="icon2" onmouseenter="show('temp_min')" onmouseleave="hide('temp_min')">
+						<div id="temp_min">
+							<h6 class="temp_min">Temperatura mínima</h6>
+							<div class="border_left border2"></div>
+						</div>
+						<img src="./images/temp_min.png">
+					</div>
+					<div class="icon3" onmouseenter="show('temp_max')" onmouseleave="hide('temp_max')">
+						<div id="temp_max">
+							<h6  class="temp_max">Temperatura máxima</h6>
+							<div class="border_left border3"></div>
+						</div>
+						<img src="./images/temp_max.png">
+					</div>
+					<div class="icon4" onmouseenter="show('luz')" onmouseleave="hide('luz')">
+						<div id="luz">
+							<h6 class="luz">Brillo solar</h6>
+							<div class="border_rigth border4"></div>
+						</div>
+						<img src="./images/luz.png">
+					</div>
+					<div class="icon5" onmouseenter="show('lluvia')" onmouseleave="hide('lluvia')">
+						<div id="lluvia">
+							<h6 class="lluvia">Días de lluvia</h6>
+							<div class="border_rigth border5"></div>
+						</div>
+						<img src="./images/lluvia.png">
+					</div>
+					<div class="icon6" onmouseenter="show('humedad')" onmouseleave="hide('humedad')">
+						<div id="humedad">
+							<h6 class="humedad">Humedad Relativa</h6>
+							<div class="border_rigth border6"></div>
+						</div>
+						<img src="./images/humedad.png">
+					</div>
+				</div>
+				<h2 class="button_next" id="button_next1">HISTÓRICO DEL CLIMA</h2>
+				<div class="button_next" id="button_next">
+					<input type="button" name="siguiente" value="Siguiente ▸" onclick="irAEtapa()" />
+				</div>
 			</div>
 		</article>
 	</section>
@@ -75,6 +134,89 @@
 FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
             <h5>Correo Electrónico: comunica@fedearroz.com.co</h5>
         </div>
+        <div class="logos">
+          <div class="contenedor">
+            <h3>CON EL APOYO DE:</h3>
+            <div class="fmi"></div>
+          </div>
+        </div>
     </footer>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJjYaOwwzrkxdbKGM0gWu1Z8i0cbAKljI&callback=initMap">
+    </script>
+    <script type="text/javascript">
+    	var lat= 4.167228;
+      var long = -74.899802;      
+      var map;
+      var municipio;
+      var departamento;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: lat, lng: long}
+        });
+        var geocoder = new google.maps.Geocoder();
+
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+      function setLayer(){
+          var layer = new google.maps.FusionTablesLayer({
+          map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col2",
+        from: "1P5mDY6KNIgNEC5dVagva1kFcIN1sqbKLieuWq14j",
+        where: "col1 \x3d \x27"+departamento+"\x27"
+      },
+      options: {
+        styleId: 2,
+        templateId: 3
+      }
+        });
+        layer.setMap(map);
+      }
+      function geocodeAddress(geocoder, resultsMap) {
+        municipio =document.getElementById('municipio').value.trim();
+        departamento = document.getElementById('departamento').value.trim();
+        if(municipio != '' && departamento != '')
+        {
+          hide('error');
+          show('icons');
+          show('button_next');
+          show('button_next1');
+          var address = municipio + ',' + departamento;
+          geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+              setLayer();
+              resultsMap.setCenter(results[0].geometry.location);
+              var marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location
+              });
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+        }else{
+            show('error');
+        }
+      }
+      function show(elemento){
+      	console.log(elemento);
+      	var elem = document.getElementById(elemento);
+      	console.log(elem);
+      	elem.style.visibility = 'visible';
+      }
+      function hide(elemento){
+      	var elem = document.getElementById(elemento);
+      	elem.style.visibility = 'hidden';
+      }
+
+      function irAEtapa(){
+        window.location="etapa.html?mun="+municipio+"&depar="+departamento;
+      }
+    </script>
 </body>
 </html>
