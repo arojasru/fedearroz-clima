@@ -184,8 +184,9 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         departamento = params[1];
         title_depto.innerHTML = replaceAll(departamento,'_', ' ');
         function showVariable(pre1, pre2, pre3){
-        	var locImage = departamento.toLowerCase();
-        	locImage[0] = locImage[0].toUpperCase();
+        	var locImage0 = departamento.toLowerCase();
+        	var  locImage1= locImage0[0].toUpperCase();
+        	var locImage = locImage1+locImage0.substr(1);
         	locImage = replaceAll(locImage, '20%',' ');
         	variable.style.backgroundImage = "url('./images/GRAFICOS/"+pre1+"/Graficos_"+pre1+"/"+pre2+"_"+locImage+".jpg')";
         	map.style.backgroundImage = "url('./images/GRAFICOS/"+pre1+"/Mapas_"+pre1+"/Map_"+pre3+"_"+locImage+".jpg')";
