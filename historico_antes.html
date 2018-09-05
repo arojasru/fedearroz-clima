@@ -77,42 +77,42 @@
 	<section class="contenedor section3">
 		<article class="">
 			<div class="icons">
-						<div class="icon1" onmouseenter="show('precip')" onmouseleave="hide('precip')">
+						<div class="icon1" onmouseenter="show('precip'); showVariable('Precipitacion','Precipitación','Prec')" onmouseleave="hide('precip')">
 							<div>
 								<h6 class="precip" id="precip">Precipitaciones</h6>
 								<div class="border_left"></div>
 							</div>
 							<img src="./images/precip.png">
 						</div>
-						<div class="icon2" onmouseenter="show('temp_min')" onmouseleave="hide('temp_min')">
+						<div class="icon2" onmouseenter="show('temp_min');showVariable('Temperatura_Minima','Graf_Tmin','Tmin')" onmouseleave="hide('temp_min')">
 							<div>
 								<h6 class="temp_min"  id="temp_min">Temp. Mín.</h6>
 								<div class="border_left border2"></div>
 							</div>
 							<img src="./images/temp_min.png">
 						</div>
-						<div class="icon3" onmouseenter="show('temp_max')" onmouseleave="hide('temp_max')">
+						<div class="icon3" onmouseenter="show('temp_max');showVariable('Temperatura_Maxima','Graf_Tmax','Tmax')" onmouseleave="hide('temp_max')">
 							<div>
 								<h6  class="temp_max" id="temp_max">Temp. Máx.</h6>
 								<div class="border_left border3"></div>
 							</div>
 							<img src="./images/temp_max.png">
 						</div>
-						<div class="icon4" onmouseenter="show('luz')" onmouseleave="hide('luz')">
+						<div class="icon4" onmouseenter="show('luz');showVariable('Brillo_Solar','SolarBri','SolarBri')" onmouseleave="hide('luz')">
 							<div>
 								<h6 id="luz" class="luz">Brillo solar</h6>
 								<div class="border_rigth border4"></div>
 							</div>
 							<img src="./images/luz.png">
 						</div>
-						<div class="icon5" onmouseenter="show('lluvia')" onmouseleave="hide('lluvia')">
+						<div class="icon5" onmouseenter="show('lluvia');showVariable('Dias_con_Lluvia','RainDays','RainDays')" onmouseleave="hide('lluvia')">
 							<div>
 								<h6 id="lluvia" class="lluvia">Días de lluvia</h6>
 								<div class="border_rigth border5"></div>
 							</div>
 							<img src="./images/lluvia.png">
 						</div>
-						<div class="icon6" onmouseenter="show('humedad')" onmouseleave="hide('humedad')">
+						<div class="icon6" onmouseenter="show('humedad');showVariable('Humedad_Relativa','Rhum','Rhum')" onmouseleave="hide('humedad')">
 							<div>
 								<h6 id="humedad" class="humedad">Humedad Rel.</h6>
 								<div class="border_rigth border6"></div>
@@ -120,7 +120,7 @@
 							<img src="./images/humedad.png">
 						</div>
 					</div>
-			<div class="variable_graph"></div>
+			<div class="variable_graph" id="variable_graph"></div>
 		</article>
 	</section>
 	<section class="section4 contenedor">
@@ -131,6 +131,7 @@
 			</div>
 		</article>
 		<article>
+			<h3 id="title_depto"></h3>
 			<div id="map"></div>
 			<div>
 				
@@ -167,6 +168,28 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         </div>
     </footer>
 	<script type="text/javascript">
+		var municipio;
+		var departamento;
+		var variable  = document.getElementById('variable_graph');
+		var mapa  = document.getElementById('map');
+		var title_depto  = document.getElementById('title_depto');
+		var paramstr = window.location.search.substr(1);
+        var paramarr = paramstr.split ("&");
+        var params = {};
+        for ( var i = 0; i < paramarr.length; i++) {
+            var tmparr = paramarr[i].split("=");
+            params[i] = replaceAll(tmparr[1],"%20", "_");
+        }
+        municipio = params[0];
+        departamento = params[1];
+        title_depto.innerHTML = replaceAll(departamento,'_', ' ');
+        function showVariable(pre1, pre2, pre3){
+        	var locImage = departamento.toLowerCase();
+        	locImage[0] = locImage[0].toUpperCase();
+        	locImage = replaceAll(locImage, '20%',' ');
+        	variable.style.backgroundImage = "url('./images/GRAFICOS/"+pre1+"/Graficos_"+pre1+"/"+pre2+"_"+locImage+".jpg')";
+        	map.style.backgroundImage = "url('./images/GRAFICOS/"+pre1+"/Mapas_"+pre1+"/Map_"+pre3+"_"+locImage+".jpg')";
+        }
 		function show(elemento){
       	console.log(elemento);
       	var elem = document.getElementById(elemento);
@@ -178,6 +201,12 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
       	var elem = document.getElementById(elemento);
       	elem.style.fontSize = '22px';
       	elem.style.top = '40%';
+      }
+      function replaceAll(text, c1, c2){
+        while(text.indexOf(c1)>0){
+          text = text.replace(c1,c2);
+        }
+        return text;
       }
 	</script>
 </body>
