@@ -5,6 +5,15 @@ body{
 	max-width: 1000px;
 	margin: 0 auto;
 }
+.help_button{
+	position: fixed;
+    top: 30%;
+    width: 70px;
+    height: 69px;
+    background-image: url(../images/boton_ayuda.png);
+    background-size: cover;
+    left: 5%;
+}
 /*MENU*/
 .menu{
 	background: rgb(84,107,33);

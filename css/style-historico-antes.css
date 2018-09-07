@@ -191,6 +191,7 @@
 /*SECTION4*/
 .section4 article:last-child{
 	height: 500px;
+    position: relative;
 }
 #map{
 	background-image: url(../images/GRAFICOS/Precipitacion/Mapas_Precipitación/Map_Prec_Vichada.jpg);
@@ -206,5 +207,5 @@
     color: white;
     font-size: 25px;
     padding: 5px 10px;
-    right: 500px;
+    right: 200px;
 }
