@@ -2,6 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width ,initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="./css/style-etapa.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:600|Open+Sans+Condensed:700|Oswald:500|Source+Serif+Pro" rel="stylesheet">
@@ -20,23 +22,6 @@
             <h1 class="title">¡Bienvenido!</h1>
             <h3 class="subtitle" id="subtitle">Espinal, Tolima</h3>
         </div>
-    </section>
-    <section>
-        <nav class="menu">
-            <ul class="contenedor">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfw0NyjZuWvtsKxgWdJwrdmVfyXWUe8_pkFYRzXR4qwjCgMfg/viewform">
-                    <li>Habla con nosotros</li>
-                </a>
-                <a href="http://190.60.252.91:2911/loginUsers">
-                    <li>Sección usuarios</li>
-                </a>
-                <a href="https://drive.google.com/drive/folders/1WmuWTXdO1SPUZ8P8n_t7S9aJ4tn21yZE">
-                    <li>Documentos</li>
-                </a>
-                <a href="#"><li>VIDEOS</li></a>
-                <a href="#"><li>Modo Avanzado</li></a>
-            </ul>
-        </nav>
     </section>
     <section class="contenedor">
         <h2 class="description">Tenga en cuenta que las condiciones meteorológicas ejercen una influencia, ya sea positiva o negativa, en cada una de las labores agronómicas del cultivo, y esto se refleja en la productividad, por esto es importante conocer la etapa de desarrollo del cultivo y la labor agronómica que se esta planeando para revisar la información climática y/o meteorológica que favorezca tomar una decisión.
@@ -132,7 +117,7 @@
                 <a href="http://190.60.252.91:2911/loginUsers">
                     <li>Sección usuarios</li>
                 </a>
-                <a href="https://drive.google.com/drive/folders/1WmuWTXdO1SPUZ8P8n_t7S9aJ4tn21yZE">
+                <a href="documentos.html">
                     <li>Documentos</li>
                 </a>
             </ul>
@@ -152,6 +137,7 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
     <script type="text/javascript">
         var municipio;
         var departamento;
+        var zona;
         var paramstr = window.location.search.substr(1);
         var paramarr = paramstr.split ("&");
         var params = {};
@@ -165,6 +151,7 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         sub.innerHTML = params[0]+" , "+params[1];
         municipio = params[0];
         departamento = params[1];
+        zona = params[2];
         function replaceAll(text, c1, c2){
         while(text.indexOf(c1)>0){
           text = text.replace(c1,c2);
@@ -172,7 +159,7 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         return text;
       }
       function irAHistorico(){
-        window.location="historico_antes.html?mun="+municipio+"&depar="+departamento;
+        window.location="historico_antes.html?mun="+municipio+"&depar="+departamento+"&zona="+zona;
       }
     </script>
 </body>

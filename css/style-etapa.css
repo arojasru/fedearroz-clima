@@ -220,3 +220,84 @@
 	color: white;
 	padding-bottom: 50px;
 }
+@media screen and (max-width: 500px){
+    .portada div h1{
+        
+    }
+    .description{
+        font-size: 15px;
+        text-align: justify;
+        margin: 20px;
+    }
+    .mapa{
+        flex-wrap: wrap;
+        height: 500px;
+        position: relative;
+        margin-top: 20px;
+    }
+    .map_frame{
+        position: absolute;
+        top: 52%;
+        height: 300px;
+        width: 95%;
+    }
+    .text_frame{
+        position: absolute;
+        top: 0;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .text_frame h1{
+        font-size: 28px;
+    }
+    .text_frame h3{
+        font-size: 15px;
+    }
+    .inputs{
+        margin: 20px 0 0 0;
+    }
+    .text_frame input[type = "select"]{
+        font-size: 15px;
+        margin-top: 0;
+        line-height: 1;
+        height: 30px;
+    }
+    .search_icon{
+        margin: 10px !important;
+        width: 100%;
+        border-radius: 15px;
+        text-align: center;
+        background-position: 180px !important;
+    }
+    .texts{
+        margin: 0;
+    }
+    .section4{
+        height: 900px;
+    }
+    .icons{
+        position: absolute;
+        top: 550px;
+    }
+    #button_next1{
+        height: 0;
+        visibility: hidden;
+        color: white;
+    }
+    .button_next{    
+        position: absolute;
+        top: 700px;
+        width: 100% !important;
+    }
+    .text_frame input[type="button"]{
+        width: 100%;
+        border-radius: 15px;
+        margin: 0;
+    }
+    #clima,#actividades{
+        top: 250px;
+        left: 0;
+        margin: 0 5%;
+        width: 90%;
+    }
+}

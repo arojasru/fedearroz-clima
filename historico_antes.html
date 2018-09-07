@@ -77,42 +77,42 @@
 	<section class="contenedor section3">
 		<article class="">
 			<div class="icons">
-						<div class="icon1" onmouseenter="show('precip'); showVariable('Precipitacion','Precipitación','Prec')" onmouseleave="hide('precip')">
+						<div class="icon1" onmouseenter="show('precip'); showVariable('precipitacion','graf_prec','map_prec')" onmouseleave="hide('precip')">
 							<div>
 								<h6 class="precip" id="precip">Precipitaciones</h6>
 								<div class="border_left"></div>
 							</div>
 							<img src="./images/precip.png">
 						</div>
-						<div class="icon2" onmouseenter="show('temp_min');showVariable('Temperatura_Minima','Graf_Tmin','Tmin')" onmouseleave="hide('temp_min')">
+						<div class="icon2" onmouseenter="show('temp_min');showVariable('temperatura_minima','graf_tmin','map_tmin')" onmouseleave="hide('temp_min')">
 							<div>
 								<h6 class="temp_min"  id="temp_min">Temp. Mín.</h6>
 								<div class="border_left border2"></div>
 							</div>
 							<img src="./images/temp_min.png">
 						</div>
-						<div class="icon3" onmouseenter="show('temp_max');showVariable('Temperatura_Maxima','Graf_Tmax','Tmax')" onmouseleave="hide('temp_max')">
+						<div class="icon3" onmouseenter="show('temp_max');showVariable('temperatura_maxima','graf_tmax','map_tmax')" onmouseleave="hide('temp_max')">
 							<div>
 								<h6  class="temp_max" id="temp_max">Temp. Máx.</h6>
 								<div class="border_left border3"></div>
 							</div>
 							<img src="./images/temp_max.png">
 						</div>
-						<div class="icon4" onmouseenter="show('luz');showVariable('Brillo_Solar','SolarBri','SolarBri')" onmouseleave="hide('luz')">
+						<div class="icon4" onmouseenter="show('luz');showVariable('brillo_solar','graf_solarbri','map_solarbri')" onmouseleave="hide('luz')">
 							<div>
 								<h6 id="luz" class="luz">Brillo solar</h6>
 								<div class="border_rigth border4"></div>
 							</div>
 							<img src="./images/luz.png">
 						</div>
-						<div class="icon5" onmouseenter="show('lluvia');showVariable('Dias_con_Lluvia','RainDays','RainDays')" onmouseleave="hide('lluvia')">
+						<div class="icon5" onmouseenter="show('lluvia');showVariable('dias_con_lluvia','graf_raindays','map_raindays')" onmouseleave="hide('lluvia')">
 							<div>
 								<h6 id="lluvia" class="lluvia">Días de lluvia</h6>
 								<div class="border_rigth border5"></div>
 							</div>
 							<img src="./images/lluvia.png">
 						</div>
-						<div class="icon6" onmouseenter="show('humedad');showVariable('Humedad_Relativa','Rhum','Rhum')" onmouseleave="hide('humedad')">
+						<div class="icon6" onmouseenter="show('humedad');showVariable('humedad_relativa','graf_rhum','map_rhum')" onmouseleave="hide('humedad')">
 							<div>
 								<h6 id="humedad" class="humedad">Humedad Rel.</h6>
 								<div class="border_rigth border6"></div>
@@ -150,7 +150,7 @@
                 <a href="http://190.60.252.91:2911/loginUsers">
                     <li>Sección usuarios</li>
                 </a>
-                <a href="https://drive.google.com/drive/folders/1WmuWTXdO1SPUZ8P8n_t7S9aJ4tn21yZE">
+                <a href="documentos.html">
                     <li>Documentos</li>
                 </a>
             </ul>
@@ -170,6 +170,7 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
 	<script type="text/javascript">
 		var municipio;
 		var departamento;
+		var zona;
 		var variable  = document.getElementById('variable_graph');
 		var mapa  = document.getElementById('map');
 		var title_depto  = document.getElementById('title_depto');
@@ -182,14 +183,15 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         }
         municipio = params[0];
         departamento = params[1];
+        zona = params[2];
+        if(zona!="")
+        	departamento =departamento+"_"+zona;
         title_depto.innerHTML = replaceAll(departamento,'_', ' ');
         function showVariable(pre1, pre2, pre3){
-        	var locImage0 = departamento.toLowerCase();
-        	var  locImage1= locImage0[0].toUpperCase();
-        	var locImage = locImage1+locImage0.substr(1);
+        	var locImage = departamento.toLowerCase();
         	locImage = replaceAll(locImage, '20%',' ');
-        	variable.style.backgroundImage = "url('./images/GRAFICOS/"+pre1+"/Graficos_"+pre1+"/"+pre2+"_"+locImage+".jpg')";
-        	map.style.backgroundImage = "url('./images/GRAFICOS/"+pre1+"/Mapas_"+pre1+"/Map_"+pre3+"_"+locImage+".jpg')";
+        	variable.style.backgroundImage = "url('./images/graficos/"+pre1+"/graficos/"+pre2+"_"+locImage.toLowerCase()+".jpg')";
+        	map.style.backgroundImage = "url('./images/graficos/"+pre1+"/mapas/"+pre3+"_"+locImage.toLowerCase()+".jpg')";
         }
 		function show(elemento){
       	console.log(elemento);
