@@ -143,6 +143,11 @@ body{
 	.logos div{
 		flex-wrap: wrap;
 	}
+	.help_button{
+    width: 50px;
+    height: 48px;
+    z-index: 3;
+	}
 }
 /*
 font-family: 'Fira Sans', sans-serif;

@@ -229,75 +229,75 @@
         text-align: justify;
         margin: 20px;
     }
-    .mapa{
+    .title{
+        text-align: center;
+        padding-top: 120px !important;
+    }
+    .subtitle{
+            text-align: center;
+    font-size: 21px;
+    }
+    .title_etapa_seleccion{
+        font-size: 22px;
+    line-height: 1.2;
+    }
+    .etapa  article{
+            width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    }
+    .etapa  article a{
+            width: 52%;
+    margin: 0 auto;
+    }
+    .barra_horizontal{
+        visibility: hidden;
+    }
+    .etapa article h3{
+        margin:5px;
+    }
+        .antes_background{
+            height: 200px;
+    background-position-x: -285px;
+    }
+    .antes_background h1{
+            padding: 45px 10px 5px 10px;
+    font-size: 38px;
+    width: 190px;
+    text-align: center;
+    line-height: 1;
+    }
+    .antes_background h3{
+        font-size: 18px;
+    width: 190px;
+    text-align: center;
+    }
+    .antes_text article h3:first-child{
+            font-size: 13px;
+    margin: 30px;
+    }
+    .antes_text div:first-child{
         flex-wrap: wrap;
-        height: 500px;
-        position: relative;
-        margin-top: 20px;
+    width: 90%;
+    margin: 0 auto;
     }
-    .map_frame{
-        position: absolute;
-        top: 52%;
-        height: 300px;
-        width: 95%;
+    .antes_text div img{
+        margin: 0;
+    width: 150px;
     }
-    .text_frame{
-        position: absolute;
-        top: 0;
-        width: 90%;
+    .antes_text .list_text div a{
+            flex-wrap: wrap;
+    padding: 5px;
+    }
+    .list_text div div a img{
         margin: 0 auto;
     }
-    .text_frame h1{
-        font-size: 28px;
+    .list_text div div a h3{
+            margin: 0;
+    padding-bottom: 0;
+    font-size: 12px;
     }
-    .text_frame h3{
-        font-size: 15px;
-    }
-    .inputs{
-        margin: 20px 0 0 0;
-    }
-    .text_frame input[type = "select"]{
-        font-size: 15px;
-        margin-top: 0;
-        line-height: 1;
-        height: 30px;
-    }
-    .search_icon{
-        margin: 10px !important;
-        width: 100%;
-        border-radius: 15px;
-        text-align: center;
-        background-position: 180px !important;
-    }
-    .texts{
-        margin: 0;
-    }
-    .section4{
-        height: 900px;
-    }
-    .icons{
-        position: absolute;
-        top: 550px;
-    }
-    #button_next1{
-        height: 0;
-        visibility: hidden;
-        color: white;
-    }
-    .button_next{    
-        position: absolute;
-        top: 700px;
-        width: 100% !important;
-    }
-    .text_frame input[type="button"]{
-        width: 100%;
-        border-radius: 15px;
-        margin: 0;
-    }
-    #clima,#actividades{
-        top: 250px;
-        left: 0;
-        margin: 0 5%;
-        width: 90%;
+    .conozca_text{
+        font-size: 13px !important;
     }
 }
