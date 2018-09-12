@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	  <meta name="viewport" content="width=device-width ,initial-scale=1, user-scalable=no"/>
 	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style-tiempo.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -30,7 +31,9 @@
 	</section>
 	<section class="contenedor section2">
 		<img src="./images/mapa_colombia.png" class="mapa_png">
-		<iframe src="https://weather.msfc.nasa.gov/cgi-bin/get-abi?satellite=GOESEastfullDiskband13&amp;lat=-5&amp;lon=-65&amp;zoom=2&amp;type=Animation&amp;numframes=20&amp;width=1000&amp;height=1000&amp;palette=ir2.pal" width="55%" height="523px" class="map" ></iframe>
+		<div id="map">
+			<iframe src="https://weather.msfc.nasa.gov/cgi-bin/get-abi?satellite=GOESEastfullDiskband13&amp;lat=-5&amp;lon=-65&amp;zoom=2&amp;type=Animation&amp;numframes=20&amp;width=1000&amp;height=1000&amp;palette=ir2.pal" width="100%" height="523px" class="map" ></iframe>
+		</div>
 		<img src="./images/convenciones.png">
 	</section>
 	<section class="section3 contenedor">
@@ -103,6 +106,20 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
       	elem.style.fontSize = '22px';
       	elem.style.top = '40%';
       }
+
+      function myFunction(x) {
+      	var map = document.getElementById('map');
+      	console.log(map);
+	    if (x.matches) { // If media query matches
+	    	map.innerHTML = '<iframe src="https://weather.msfc.nasa.gov/cgi-bin/get-abi?satellite=GOESEastfullDiskband13&amp;lat=-5&amp;lon=-60&amp;zoom=2&amp;type=Animation&amp;numframes=20&amp;width=1000&amp;height=1000&amp;palette=ir2.pal" width="100%" height="523px" class="map" ></iframe>';
+	    } else {
+			 map.innerHTML = '<iframe src="https://weather.msfc.nasa.gov/cgi-bin/get-abi?satellite=GOESEastfullDiskband13&amp;lat=-5&amp;lon=-65&amp;zoom=2&amp;type=Animation&amp;numframes=20&amp;width=1000&amp;height=1000&amp;palette=ir2.pal" width="100%" height="523px" class="map" ></iframe>'
+	    }
+	}
+
+	var x = window.matchMedia("(max-width: 500px)")
+	myFunction(x) // Call listener function at run time
+	x.addListener(myFunction) // Attach listener function on state changes
 	</script>
 </body>
 </html>
