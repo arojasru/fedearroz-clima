@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width ,initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="./css/style-documentos.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:600|Open+Sans+Condensed:700|Oswald:500|Source+Serif+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
+	<title>Documentos</title>
+</head>
+<body>
+	<a href="ayuda.pdf" target="_blank" class="help_button"></a>
+	<section class="logo">
+		<header class="contenedor header">
+			<figure>
+				<a href="./index.html"><img src="./images/logo.jpg"></a>
+			</figure>
+		</header>
+	</section>
+	<section class="portada">
+		<div class="contenedor">
+			<h1 class="title">¿Va a llover o no?</h1>
+			<h3 class="subtitle">Servicio Climático de FEDEARROZ</h3>
+		</div>
+		
+	</section>
+	<section class="contenedor section1">
+		<h1 class="title">DOCUMENTOS</h1>
+		<div class="vertical_line"></div>
+		<h3 class="description">El sensor de radiación infrarroja de los satelites
+metereológicos, mide la temperatura del tope de las
+nubes y de la superficie terrestre.Dado que en la
+capa atmosférica en donde se establecen las nubes,
+la temperatura del aire disminuye a medida que la
+altura, las cuales tienen mayor probabilidad de
+producir lluvia.</h3>
+	</section>
+	<section class="section2 contenedor">
+		<article class="article_left">
+			<a href="https://drive.google.com/drive/folders/1WmuWTXdO1SPUZ8P8n_t7S9aJ4tn21yZE">
+				<img src="./images/icon_documento1.png">
+				<div>
+					<h3 class="top">Información herramientas alerta</h3>
+					<h3 class="bottom">El sensor de radiación infrarroja de los satelites metereológicos,
+mide la temperatura del tope de las nubes y de la superficie
+terrestre. Dado que en la capa atmosférica en donde se establecen
+las nubes, la temperatura del aire disminuye a medida que la
+altura, las cuales tienen mayor probabilidad de producir lluvia.</h3>
+				</div>
+			</a>
+		</article>
+		<article class="article_right">
+			<a href="https://drive.google.com/drive/folders/1WmuWTXdO1SPUZ8P8n_t7S9aJ4tn21yZE">
+				<div>
+					<h3 class="top">Encuesta sobre cómo el sector arrocero utiliza la información metereológica y climática</h3>
+					<h3 class="bottom">El sensor de radiación infrarroja de los satelites metereológicos,
+mide la temperatura del tope de las nubes y de la superficie
+terrestre. Dado que en la capa atmosférica en donde se establecen
+las nubes, la temperatura del aire disminuye a medida que la
+altura, las cuales tienen mayor probabilidad de producir lluvia.</h3>
+				</div>
+				<img src="./images/icon_documento2.png">
+			</a>
+		</article>
+	</section>
+        <footer class="footer">
+        <div class="menu_footer contenedor">
+            <ul>
+                <li>
+                    <a href="./index.html"><img src="./images/logo.jpg"></a>
+                </li>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfw0NyjZuWvtsKxgWdJwrdmVfyXWUe8_pkFYRzXR4qwjCgMfg/viewform">
+                    <li>Habla con nosotros</li>
+                </a>
+                <a href="http://190.60.252.91:2911/loginUsers">
+                    <li>Sección usuarios</li>
+                </a>
+                <a href="documentos.html">
+                    <li>Documentos</li>
+                </a>
+            </ul>
+        </div>
+        <div class="info_footer contenedor">
+            <h5>
+FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
+            <h5>Correo Electrónico: comunica@fedearroz.com.co</h5>
+        </div>
+        <div class="logos">
+          <div class="contenedor">
+            <h3>CON EL APOYO DE:</h3>
+            <div class="fmi"></div>
+          </div>
+        </div>
+    </footer>
+</body>
+</html>
