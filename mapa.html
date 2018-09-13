@@ -40,11 +40,7 @@
     </article>
     <article class="section2_article2">
       <div id="Precipitación">
-        <h1><img src="./images/Precipitación.png">Precipitación</h1>
-        <h3><p></p>La precipitación acumulada anual es xxxxx</h3>  
-        <h3><p></p>Los meses mas lluviosos son xxxx y xxxx</h3> 
-        <h3><p></p>Los meses mas secos son xxxx y xxxx</h3> 
-        <h3><p></p>La temporada lluviosa inicia en xxx y finaliza en xxx</h3> 
+         
       </div>
       <div>
         <h1><img src="./images/temp_max.png">Temperatura. Máx.</h1>
@@ -258,16 +254,18 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
     });
   }); 
   function leer(data){
-    data1 = data.split('#');
+    var data1 = data.split('#');
     var i;
-    for (i = 0; i< data1.length; i++) {
+    for (i = 1; i< data1.length; i++) {
         var variable = data1[i].split('\n');
-        var elem = document.getElementById(variable(0));
-        if(i==0)
-          elem.innerHTML('<h1><img src="./images/'+variable(0)+'.png">'+variable(0)+'</h1>');
+        var elem = document.getElementById(variable[0]);
+        console.log(variable[0]);
+        console.log(elem);
+        if(i==1)
+          elem.appendChild('<h1><img src="./images/'+variable[0]+'.png">'+variable[0]+'</h1>');
         
       else
-        elem.innerHTML('<h3><p></p>'+variable(i)+'</h3> ');
+        elem.appendChild('<h3><p></p>'+variable[i]+'</h3> ');
     }
 
   }
