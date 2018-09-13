@@ -30,14 +30,6 @@
       <h3>La información histórica es de gran utilidad, permite conocer el comportamiento normal de las diferentes variables climáticas de la zona, identificando las condiciones climáticas de cada mes, y con esta información se puede determinar cual o cuales son los meses que históricamente han brindado las mejores condiciones para el adecuado desarrollo del cultivo</h3>
     </article>
   </section>
-
-Ingrese una url válida:<input type="text" id="input-url" size="50" value="https://www.mozilla.org/media/MPL/2.0/index.815ca599c9df.txt"></input>
-
-<input type="button" id="button" value="Ver .txt"></input>
-<div class="text">
-  <hr />
-  <h2>Texto:</h2>
-</div>
   <section class="contenedor section2">
     <article class="section2_article1">
       <div class="brown_bar"></div>
@@ -199,6 +191,7 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         }
         municipio = params[0];
         departamento = params[1];
+        var departamento1 = departamento.toLowerCase();
         zona = params[2];
         if(zona!="")
           departamento =departamento+"_"+zona;
@@ -252,25 +245,26 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
   <script>
   $(function() 
   {
-  $("#button").click( function()
-  {
-     //var TXT_URL = 'https://www.mozilla.org/media/MPL/2.0/index.815ca599c9df.txt';
-     var TXT_URL = './editables/climatologia/'+departamento+'.txt';
+  $(document).ready( function()
+      {
+         //var TXT_URL = 'https://www.mozilla.org/media/MPL/2.0/index.815ca599c9df.txt';
+         var TXT_URL = 'https://afverdugo3348.github.io/fedearroz-clima/editables/climatologia/'+departamento1+'.txt';
+        $.ajax({
+          url: TXT_URL,
+        }).then(function(data) {
+          console.log(data); // Obtienes el texto
+          leer(data);
+        });
+    });
+  } 
+  function leer(data){
+    data1 = data.split('\n');
+    var i;
+    for (i = 0; i< data1.length; i++) {
+      console.log(data1[i]);
+    }
 
-      $.ajax
-      (
-        {
-            url : TXT_URL,
-        dataType: "text",
-        success : function (data) 
-        {
-                $(".text").html("<pre>"+data+"</pre>");
-        }
-      }
-    );
-     });
-  });
-
-  </script>
+  }
+ </script>
 </body>
 </html>
