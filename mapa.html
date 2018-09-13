@@ -39,8 +39,7 @@
       </div>
     </article>
     <article class="section2_article2">
-      <div id="Precipitación">
-         
+      <div id="precip">
       </div>
       <div>
         <h1><img src="./images/temp_max.png">Temperatura. Máx.</h1>
@@ -256,18 +255,29 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
   function leer(data){
     var data1 = data.split('#');
     var i;
+    var j;
     for (i = 1; i< data1.length; i++) {
         var variable = data1[i].split('\n');
-        var elem = document.getElementById(variable[0]);
-        console.log(variable[0]);
-        console.log(elem);
-        if(i==1)
-          elem.appendChild('<h1><img src="./images/'+variable[0]+'.png">'+variable[0]+'</h1>');
+        for (j = 0;  j <variable.length-1;  j++) {
+          var id= variable[0].split(',')[0];
+          var title= variable[0].split(',')[1];
+          var elem = document.getElementById(id);
+          console.log(variable[0]);
+          console.log(elem);
+          var node;
+          if(j==0){
+            node = document.createElement('H1');
+            node.innerHTML='<img src="./images/'+id+'.png">'+title;
+            elem.appendChild(node);
+          }
+          else{
+            node = document.createElement('H3');
+            node.innerHTML='<p></p>'+variable[j];
+            elem.appendChild(node);
+          }
         
-      else
-        elem.appendChild('<h3><p></p>'+variable[i]+'</h3> ');
+        }
     }
-
   }
  </script>
 </body>
