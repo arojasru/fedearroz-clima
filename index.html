@@ -885,34 +885,7 @@
 						</div>
 						<img src="./images/temp_min.png">
 					</div>
-					<div class="icon3" onmouseenter="show('temp_max')" onmouseleave="hide('temp_max')">
-						<div id="temp_max">
-							<h6  class="temp_max">Temperatura máxima</h6>
-							<div class="border_left border3"></div>
-						</div>
-						<img src="./images/temp_max.png">
-					</div>
-					<div class="icon4" onmouseenter="show('luz')" onmouseleave="hide('luz')">
-						<div id="luz">
-							<h6 class="luz">Brillo solar</h6>
-							<div class="border_rigth border4"></div>
-						</div>
-						<img src="./images/luz.png">
-					</div>
-					<div class="icon5" onmouseenter="show('lluvia')" onmouseleave="hide('lluvia')">
-						<div id="lluvia">
-							<h6 class="lluvia">Días de lluvia</h6>
-							<div class="border_rigth border5"></div>
-						</div>
-						<img src="./images/lluvia.png">
-					</div>
-					<div class="icon6" onmouseenter="show('humedad')" onmouseleave="hide('humedad')">
-						<div id="humedad">
-							<h6 class="humedad">Humedad Relativa</h6>
-							<div class="border_rigth border6"></div>
-						</div>
-						<img src="./images/humedad.png">
-					</div>
+
 				</div>
 				<h2 class="button_next" id="button_next1">HISTÓRICO DEL CLIMA</h2>
 				<div class="button_next" id="button_next">
@@ -975,7 +948,6 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         });
       }
       function setLayer(departamento){
-        console.log(departamento.toLowerCase());
           var layer = new google.maps.FusionTablesLayer({
           map: map,
       heatmap: { enabled: false },
@@ -995,17 +967,22 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         ubicacion =document.getElementById('ubicacion').value;
         var dpto = ubicacion.split(',')[1];
         departamento = dpto.split('-')[0].trim();
-        municipio = ubicacion.split(',')[0].trim();
+        municipio = ubicacion.split(',')[0];
+        municipio = replaceAll(municipio, ' ','_');
         ubicacion = replaceAll(ubicacion,',','_');
         ubicacion = replaceAll(ubicacion,' ','');
+        var ubicacion2 = departamento+"_"+municipio;
+        ubicacion2 = replaceAll(ubicacion2,',','_');
+        ubicacion2 = replaceAll(ubicacion2,' ','');
+        console.log(ubicacion2);
         var zonaNum = dpto.split('-');
         if(zonaNum.length>1){
           zona = dpto.split('-')[1];
         }
         clima = document.getElementsByName('imagenes')[0];
         actividades = document.getElementsByName('imagenes')[1];
-        clima.style.backgroundImage= "url('./images/departamentos/"+departamento+"/"+ubicacion+"_climatologia"+".jpg')";
-        actividades.style.background= "url('./images/departamentos/"+departamento+"/"+ubicacion+"_actividades"+".jpg')";
+        clima.style.backgroundImage= "url('./images/departamentos/climatologia/"+ubicacion2.toLowerCase()+"_climatologia"+".png')";
+        actividades.style.background= "url('./images/departamentos/actividades/"+ubicacion2.toLowerCase()+"_actividades"+".png')";
         hide('error');
         show('icons');
         show('button_next');
@@ -1036,7 +1013,8 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
       }
 
       function irAEtapa(){
-        window.location="etapa.html?mun="+municipio+"&depar="+departamento+"&zona="+zona;
+        var municipio2 = replaceAll(municipio, '_',' ');
+        window.location="etapa.html?mun="+municipio2+"&depar="+departamento+"&zona="+zona;
       }
       function replaceAll(text, c1, c2){
         while(text.indexOf(c1)>0){

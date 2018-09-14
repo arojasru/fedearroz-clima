@@ -101,7 +101,7 @@
     width: 310px;
     height: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
 }
 .inputs, .texts{
     display: flex;
@@ -213,11 +213,13 @@
 }
 #clima, #actividades{
     background: url(../images/departamentos/Casanare/Casanare_Aguazul_Aguazul_actividades.png);
-    width: 45%;
-    height: 300px;
+    width: 84%;
+    height: 404px;
     position: absolute;
     left: 55%;
-    top: 0;
+    top: -71px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
 }
 .icon1, .icon2, .icon3, .icon4, .icon5, .icon6{
 	background-color: rgb(84,107,33);
@@ -225,6 +227,7 @@
     width: 50px;
     height: 100%;
     position: relative;
+    margin: 2px;
 }
 .icon1:hover, .icon2:hover, .icon3:hover, .icon4:hover, .icon5:hover, .icon6:hover{
 	background-color: rgba(84,107,33,0.8);
