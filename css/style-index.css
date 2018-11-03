@@ -293,6 +293,15 @@
         width: 90%;
         margin: 0 auto;
     }
+    .precip{
+        left: 0;
+    }
+    .temp_min{
+        left: -150%;
+    }
+    .border_left{
+        width: 0;
+    }
     .text_frame h1{
         font-size: 28px;
     }
