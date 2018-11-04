@@ -56,6 +56,9 @@
 .map{
 	margin-top: 40px;
 }
+#map{
+    width: 50%;
+}
 .section2{
 	display: flex;
     justify-content: space-between;
@@ -150,4 +153,68 @@
 }
 span{
 	color: rgb(101,114,36);
+}
+@media screen and (max-width: 500px){
+    .section1_article1 h1 {
+    font-size: 24px;
+    margin: 0;
+    }
+    .img_title {
+    width: 110px;
+    height: 110px;
+    margin: 0;
+    }
+    .section1_article1{
+        margin-bottom: 20px;
+    }
+    .brown_bar{
+        margin-top: 0;
+    }
+    #map{
+    width: 94%;
+    position: absolute;
+    /* margin-top: 169px; */
+    left: 3%;
+    top: 0;
+    right: 3%;
+    }
+    .mapa_png{
+            padding-top: 109px !important;
+            margin-top: 0 !important;
+            top: 0;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    z-index: 2;
+    }
+    .contenedor.section2{
+        position: relative;
+        height: 920px;
+    }
+    .convenciones{
+            top: 585px;
+    margin-top: 0 !important;
+    position: absolute;
+    width: 94% !important;
+    left: 3%;
+    }
+    .section3 article{
+        flex-wrap: wrap;
+    }
+    .section3 article div:first-child{
+        width: 94%;
+    margin-left: 3%;
+    flex-wrap: wrap;
+    }
+    .section3 article div:first-child h6{
+        margin-top: 20px;
+    }
+    .sensor_div{
+        width: 94%;
+        margin-left: 3%;
+        margin-top: 10%;
+    }
+    .sensor{
+        visibility: hidden;
+    }
 }
