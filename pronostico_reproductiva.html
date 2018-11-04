@@ -60,7 +60,7 @@
 		</article>
 		<article class="boletin">
 			<h5>BOLETÍN AGROCLIMÁTICO</h5>
-			<div>
+			<div onclick="downloadBoletin()">
 				<h6>Descargue aquí</h6>
 				<img src="./images/icon_download.png">
 			</div>
@@ -118,6 +118,19 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
       			i = str.indexOf(term);
       		}
   			return str;
+		}
+				var paramstr = window.location.search.substr(1);
+        var paramarr = paramstr.split ("&");
+        var params = {};
+        for ( var i = 0; i < paramarr.length; i++) {
+            var tmparr = paramarr[i].split("=");
+            params[i] = replaceAll(tmparr[1],"%20", "_");
+        }
+        let municipio = params[0].toLowerCase();
+        let departamento = params[1].toLowerCase();
+        let zona = params[2].toLowerCase();
+        function downloadBoletin(){
+		window.open("./boletines/"+departamento+"_boletin_agosto_asondef.pdf");
 		}
 </script>
 </body>
