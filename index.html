@@ -873,14 +873,14 @@
 				<div class="icons" id="icons">
 					<div class="icon1" onmouseenter="show('clima');show('clima1')" onmouseleave="hide('clima'); hide('clima1')">
 						<div id="clima1">
-							<h6 class="precip">Precipitaciones</h6>
+							<h6 class="precip">Climatología</h6>
 							<div class="border_left border1"></div>
 						</div>
 						<img src="./images/precip.png">
 					</div>
-					<div class="icon2" onmouseenter="show('actividades');show('actividades1')" onmouseleave="hide('actividades');hide('actividades1')">
+					<div id="icon2" class="icon2" onmouseenter="show('actividades');show('actividades1')" onmouseleave="hide('actividades');hide('actividades1')">
 						<div id="actividades1">
-							<h6 class="temp_min">Temperatura mínima</h6>
+							<h6 class="temp_min">Actividades</h6>
 							<div class="border_left border2"></div>
 						</div>
 						<img src="./images/temp_min.png">
@@ -982,7 +982,32 @@ FEDEARROZ Oficina Principal: Carrera 100 No. 25H-55, Bogotá Colombia</h5>
         clima = document.getElementsByName('imagenes')[0];
         actividades = document.getElementsByName('imagenes')[1];
         clima.style.backgroundImage= "url('./images/departamentos/climatologia/"+ubicacion2.toLowerCase()+"_climatologia"+".png')";
-        actividades.style.background= "url('./images/departamentos/actividades/"+ubicacion2.toLowerCase()+"_actividades"+".png')";
+        //ACTIVIDADES BACKGROUND
+        if (departamento == "Tolima" || departamento =="Huila" || departamento == "Valle del Cauca" || departamento == "Cauca"){
+            console.log(departamento);
+            actividades.style.background= "url('./images/departamentos/actividades/Calendario_CENTRO_Riego_logo.jpg')";
+        }
+        else if(departamento == "Meta" || departamento =="Casanare" ||departamento=="Vichada"||departamento=="Arauca"){
+          console.log(departamento);
+          actividades.style.background= "url('./images/departamentos/actividades/Calendario_LLANOS_Riego_logo.jpg')";
+        }
+        else if(departamento=="Cordoba"||departamento=="Sucre"||departamento=="Bolivar"||departamento=="Antioquia"){
+          console.log(departamento);
+          actividades.style.background= "url('./images/departamentos/actividades/Calendario_CARIBE_HUMEDO_Riego-Secano_logo.jpg')";
+        }
+        else if(departamento=="Cesar"||departamento=="La Guajira"||departamento=="Magdalena"){
+          console.log(departamento);  
+          actividades.style.background= "url('./images/departamentos/actividades/Calendario_CARIBE_SECO_Cesar_Riego_logo.jpg')";
+        }
+        else if(departamento=="Norte de Santander"||departamento=="Santander"){
+          console.log(departamento);
+          actividades.style.background= "url('./images/departamentos/actividades/Calendario_CARIBE_SECO_Riego_logo.jpg')";
+        }
+        else{
+          console.log(departamento);
+          var iconAct = document.getElementById('icon2').style.visibility = "hidden";
+        }
+
         hide('error');
         show('icons');
         show('button_next');
